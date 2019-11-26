@@ -15,6 +15,9 @@ public class AllCapsStringTest {
     // to set up a "test fixture"
     // test fixture: a fixed state of unit under test
     // used for each test method
+
+    // key: no side effects between executions of tests
+
     // @Before setup() --> sets up the state of unit under test
     // @After tearDown() --> cleans up the state of unit under test
     @Before
@@ -26,6 +29,8 @@ public class AllCapsStringTest {
     @After
     public void tearDown() {
         System.out.println("Hello from tearDown()");
+        // release your resources, e.g. close files, close sockets
+        allCapsString = null;
     }
 
     // test method: normal java method with @Test annotation to denote it is a test
